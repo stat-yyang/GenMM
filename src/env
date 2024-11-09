@@ -1,0 +1,27 @@
+module load cuda/12.4 
+module load anaconda/5.2.0
+
+
+##### On GPU
+conda create --prefix /path/to/your/env python=3.10
+
+conda create --name GenMM python=3.10
+source activate GenMM
+pip install --no-cache-dir --find-links https://download.pytorch.org/whl/torch/ torch==2.4.0+cu124
+pip install pyg_lib torch_scatter torch_sparse torch_cluster torch_spline_conv -f https://data.pyg.org/whl/torch-2.4.0+cu124.html
+pip install torch_geometric
+
+
+##### On CPU
+
+
+
+
+
+
+
+
+# conda create --name GenMM_cpu python=3.10
+# conda activate GenMM_cpu
+# pip install --no-cache-dir --find-links https://download.pytorch.org/whl/torch/ torch==2.4.0+cpu
+# pip install pyg_lib torch_scatter torch_sparse torch_cluster torch_spline_conv -f https://data.pyg.org/whl/torch-2.4.0+cpu.html
